@@ -15,7 +15,7 @@ services:
           MINIO_ROOT_USER: admin
           MINIO_ROOT_PASSWORD: minio_admin
         volumes:
-           - s3_storage:/datas
+           - s3_storage:/data
         deploy:
             restart_policy:
                 condition: on-failure
