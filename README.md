@@ -1,4 +1,4 @@
-The collection of storage setup Samples for [DVC](https://dvc.org/doc/command-reference/remote/modify)
+The collection of storage setup samples for [DVC](https://dvc.org/doc/command-reference/remote/modify)
 
 Basic requirements:
 ```bash
