@@ -19,7 +19,10 @@ setup_webdav:
 	docker compose -f ./storages/webdav/docker-compose.yml up
 
 setup_hdfs:
-	echo "HDFS is not implemented"
+	echo "HDFS example is not implemented"
+
+setup_oss:
+	echo "Aliyun OSS emulator example is not implemented"
 
 clean:
 	cd ./test && rm -rf .dvc .git && rm .dvcignore .gitignore test.txt test.txt.dvc
