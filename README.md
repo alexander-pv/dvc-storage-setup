@@ -28,7 +28,23 @@ $ dvc push
 __WebDAV__:
 ```bash
 make setup_webdav
+# Go to http://127.0.0.1:8082/ to see the storage in web browser
 ```
+Test:
+```bash
+$ cd ./test
+$ git init && dvc init
+# Note: webdavs://127.0.0.1:8082/dvc for HTTP with SSL/TLS support
+$ dvc remote add -d webdav webdav://127.0.0.1:8082/dvc -f
+$ dvc remote modify --local webdav user <USER>
+$ dvc remote modify --local webdav password <PASSWORD>
+
+$ echo "Test" | tee test.txt
+$ dvc add test.txt && git add test.txt.dvc .gitignore
+$ git commit -m "Add data"
+$ dvc push
+```
+
 __HDFS__:
 ```bash
 make setup_hdfs

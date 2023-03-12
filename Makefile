@@ -10,11 +10,17 @@ setup_s3:
 	docker compose -f ./storages/s3/docker-compose.yml up
 
 setup_webdav:
-	echo "WebDav is not implemented"
+	mkdir -p ~/dvc_storage/webdav_storage
+	docker volume create \
+		--driver local \
+		--opt type=none \
+		--opt device="${HOME}/dvc_storage/webdav_storage" \
+		--opt o=bind webdav_storage
+	docker compose -f ./storages/webdav/docker-compose.yml up
 
 setup_hdfs:
 	echo "HDFS is not implemented"
 
 clean_test:
-	rm -rf .dvc .git
-	rm .dvcignore .gitignore test.txt test.txt.dvc
+	cd ./test && rm -rf .dvc .git && rm .dvcignore .gitignore test.txt test.txt.dvc
+

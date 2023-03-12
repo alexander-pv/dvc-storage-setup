@@ -1,0 +1,19 @@
+version: '3'
+
+volumes:
+  webdav_storage:
+    external: true
+
+services:
+    storage:
+        build: .
+        ports:
+         - "8082:8082"
+        volumes:
+           - webdav_storage:/webdav/webdav_storage
+        deploy:
+            restart_policy:
+                condition: on-failure
+                delay: 5s
+                max_attempts: 3
+                window: 120s

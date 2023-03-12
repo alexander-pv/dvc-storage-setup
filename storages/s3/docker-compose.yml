@@ -5,7 +5,7 @@ volumes:
     external: true
 
 services:
-    minio:
+    storage:
         image: minio/minio:latest
         command: server /data --console-address ":9090"
         ports:
