@@ -12,8 +12,7 @@ $ make setup_s3
 ```
 Test:
 ```bash
-$ cd ./test
-$ git init && dvc init
+$ make init && cd ./test
 $ dvc remote add -d minio s3://dvc -f
 $ dvc remote modify minio endpointurl http://172.19.0.2:9000
 $ dvc remote modify minio access_key_id <USER>
@@ -32,8 +31,7 @@ make setup_webdav
 ```
 Test:
 ```bash
-$ cd ./test
-$ git init && dvc init
+$ make init && cd ./test
 # Note: webdavs://127.0.0.1:8082/dvc for HTTP with SSL/TLS support
 $ dvc remote add -d webdav webdav://127.0.0.1:8082/dvc -f
 $ dvc remote modify --local webdav user <USER>

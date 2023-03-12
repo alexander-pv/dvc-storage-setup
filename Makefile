@@ -1,4 +1,4 @@
-.PHONY: setup_s3 setup_webdav setup_hdfs clean_test
+.PHONY: setup_s3 setup_webdav setup_hdfs clean init
 
 setup_s3:
 	mkdir -p ~/dvc_storage/s3_storage
@@ -21,6 +21,8 @@ setup_webdav:
 setup_hdfs:
 	echo "HDFS is not implemented"
 
-clean_test:
+clean:
 	cd ./test && rm -rf .dvc .git && rm .dvcignore .gitignore test.txt test.txt.dvc
 
+init:
+	cd ./test && git init && dvc init
