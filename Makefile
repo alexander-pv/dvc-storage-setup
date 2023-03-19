@@ -1,4 +1,4 @@
-.PHONY: setup_s3 setup_webdav setup_hdfs clean init
+.PHONY: setup_s3 setup_webdav clean init
 
 setup_s3:
 	mkdir -p ~/dvc_storage/s3_storage
