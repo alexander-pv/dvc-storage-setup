@@ -18,9 +18,6 @@ setup_webdav:
 		--opt o=bind webdav_storage
 	docker compose -f ./storages/webdav/docker-compose.yml up
 
-setup_hdfs:
-	echo "HDFS example is not implemented"
-
 setup_oss:
 	echo "Aliyun OSS emulator example is not implemented"
 

@@ -43,12 +43,6 @@ $ git commit -m "Add data"
 $ dvc push
 ```
 
-__HDFS__:
-```bash
-make setup_hdfs
-```
-
-
 __Aliyun OSS__:
 ```bash
 make setup_oss
