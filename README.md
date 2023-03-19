@@ -42,9 +42,3 @@ $ dvc add test.txt && git add test.txt.dvc .gitignore
 $ git commit -m "Add data"
 $ dvc push
 ```
-
-__Aliyun OSS__:
-```bash
-make setup_oss
-```
-
