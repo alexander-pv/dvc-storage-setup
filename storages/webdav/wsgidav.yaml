@@ -1,0 +1,29 @@
+verbose: 3
+
+logging:
+    #: Set logging output format
+    #: (see https://docs.python.org/3/library/logging.html#logging.Formatter)
+    logger_date_format: '%H:%M:%S'
+    logger_format: '%(asctime)s.%(msecs)03d - %(levelname)-8s: %(message)s'
+
+server: cheroot
+host: 0.0.0.0
+port: 8082
+
+provider_mapping:
+    '/': '/webdav/webdav_storage'
+    '/dvc': '/webdav/webdav_storage/dvc'
+
+http_authenticator:
+    domain_controller: null
+    accept_basic: true 
+    accept_digest: true
+    default_to_digest: true
+    
+simple_dc:
+    user_mapping:
+        "*":
+            "dvc_user":
+                password: "pwd"
+                roles: ["editor", "admin"]
+

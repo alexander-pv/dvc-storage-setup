@@ -1,0 +1,2 @@
+dvc[all]==2.45.1
+dvc-webdav==2.19.1
